@@ -6,6 +6,10 @@ import Welcome from './Welcome'
 import Clock from './Clock'
 import Login from './Login/LoginControl'
 import LifeCycle from './LifeCycle'
+import NameForm from './Form/NameForm'
+import Calculator from './Calculator/Calculator'
+import WelcomeDialog from './Combine/WelcomeDialog'
+import ButtonCom from './button'
 
 function formatName(user) {
   return user.firstName + ' ' + user.lastName;
@@ -78,6 +82,14 @@ class App extends Component {
         {this.state.lifeCycleShow && <LifeCycle obj={this.state.lifeCycleShow} />}
 
         <Login></Login>
+
+        <NameForm></NameForm>
+
+        <Calculator/>
+
+        <WelcomeDialog />
+
+        <ButtonCom/>
       </div>
     );
   }
