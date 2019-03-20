@@ -22,11 +22,18 @@ class Clock extends React.Component {
   }
 
   tick() {
-    this.setState({
-      date: new Date()
-    })
+    // this.setState({
+    //   date: new Date()
+    // })
+    // this.setState((prevState, props) => {
+    //   return {
+    //     count: prevState.count + props.increment
+    //   }
+    // })
+
     this.setState((prevState, props) => {
       return {
+        date: new Date(),
         count: prevState.count + props.increment
       }
     })
@@ -54,8 +61,7 @@ class Clock extends React.Component {
 
   render () {
     return (
-      <div>
-        <hr/>
+      <div className="panel">
         <h2>It is {this.state.date.toLocaleTimeString()}</h2>
         <h3>count: {this.state.count}</h3>
         <a href="https://www.baidu.com" onClick={this.handleClick}>click me</a>

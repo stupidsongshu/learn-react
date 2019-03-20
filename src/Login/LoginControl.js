@@ -59,8 +59,7 @@ class LoginControl extends React.Component {
     }
 
     return (
-      <div>
-        <hr/>
+      <div className="panel">
         <WarningBanner warn={isLoggedIn} />
         <button onClick={this.toggleLogin.bind(this)}>{isLoggedIn ? 'logoutButton' : 'loginButton'}</button>
         {button}

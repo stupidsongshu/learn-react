@@ -1,7 +1,6 @@
 import React from 'react'
 
 const Button = props => {
-  console.log(props)
   const { kind, ...other } = props
   const className = kind === 'primary' ? 'primaryButton' : 'secondaryButton'
   // return <button className={className} children={props.children} onClick={props.onClick}></button>
@@ -19,7 +18,7 @@ function Repeat(props) {
 class ButtonCom extends React.Component {
   render() {
     return (
-      <div>
+      <div className="panel">
         <Button kind="primary" onClick={() => console.log('clicked')}>
           hello
         </Button>

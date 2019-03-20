@@ -52,8 +52,7 @@ class Calculator extends React.Component {
     }
 
     return (
-      <div>
-        <hr />
+      <div className="panel">
         <TemperatureInput
           scale = 'c'
           temperature={celsius}

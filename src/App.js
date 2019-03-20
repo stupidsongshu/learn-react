@@ -1,18 +1,21 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-// import ReactDOM from 'react-dom'
+
 import Welcome from './Welcome'
 import Clock from './Clock'
 import Login from './Login/LoginControl'
-import LifeCycle from './LifeCycle'
-import NameForm from './Form/NameForm'
+import LifeCycle from './LifeCycle/index'
+import NameForm from './Form/Form'
 import Calculator from './Calculator/Calculator'
 import WelcomeDialog from './Combine/WelcomeDialog'
 import ButtonCom from './button'
+import PropTypes from './PropTypes/PropTypes'
+import Refs from './Refs/index'
+import PureComponent from './PureComponent'
 
 function formatName(user) {
-  return user.firstName + ' ' + user.lastName;
+  return user.firstName + ' ' + user.lastName
 }
 function greeting(user) {
   if (!user) {
@@ -26,33 +29,11 @@ const user = {
   lastName: 'world'
 }
 
-// function Clock(props) {
-//   return (
-//     <div>
-//       <h2>It is {props.date.toLocaleTimeString()}</h2>
-//     </div>
-//   )
-// }
-
-// function tick() {
-//   ReactDOM.render(<Clock />, document.getElementById('time'));
-// }
-
 function WelcomeFn(props) {
-  return <h2>welcome, {props.name}</h2>
+  return <h2 className="panel">welcome, {props.name}</h2>
 }
 
 class App extends Component {
-  constructor() {
-    super()
-    this.state = {
-      lifeCycleShow: true
-    }
-  }
-
-  handleClick = () => {
-    this.setState(prevState => ({ lifeCycleShow: !prevState.lifeCycleShow }))
-  }
   render() {
     return (
       <div className="App">
@@ -70,16 +51,18 @@ class App extends Component {
             Learn React
           </a>
         </header>
-        <p>formatName: {formatName(user)}</p>
-        <div>{greeting(user)}</div>
-        <div id="time"></div>
+
+        <div className="panel">
+          <p>formatName: {formatName(user)}</p>
+          <div>{greeting(user)}</div>
+        </div>
+
         <Clock increment={2} />
+
         <WelcomeFn name="zys0"></WelcomeFn>
         <Welcome name="zys1"></Welcome>
 
-        <hr />
-        <button onClick={this.handleClick}>生命周期</button>
-        {this.state.lifeCycleShow && <LifeCycle obj={this.state.lifeCycleShow} />}
+        <LifeCycle></LifeCycle>
 
         <Login></Login>
 
@@ -90,6 +73,12 @@ class App extends Component {
         <WelcomeDialog />
 
         <ButtonCom/>
+
+        <PropTypes/>
+
+        <Refs></Refs>
+
+        <PureComponent />
       </div>
     );
   }

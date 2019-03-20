@@ -5,7 +5,6 @@ class Dialog extends React.Component {
   render() {
     return (
       <FancyBorder color="blue">
-        <hr />
         <h1 className="dialog-title">
           {this.props.title}
         </h1>

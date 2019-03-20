@@ -5,7 +5,7 @@ import SplitPane from './SplitPane'
 class WelcomeDialog extends React.Component {
   render() {
     return (
-      <div>
+      <div className="panel">
         <Dialog
           title="Welcome"
           message="Thank you for visiting our spacecraft!">
