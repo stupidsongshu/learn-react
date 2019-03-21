@@ -13,6 +13,9 @@ import ButtonCom from './button'
 import PropTypes from './PropTypes/PropTypes'
 import Refs from './Refs/index'
 import PureComponent from './PureComponent'
+import CreateReactClass from './CreateReactClass/CreateReactClass'
+import Context from './Context/Context'
+import Fragment from './Fragment/Fragment'
 
 function formatName(user) {
   return user.firstName + ' ' + user.lastName
@@ -79,6 +82,12 @@ class App extends Component {
         <Refs></Refs>
 
         <PureComponent />
+
+        <CreateReactClass />
+
+        <Context />
+
+        <Fragment />
       </div>
     );
   }

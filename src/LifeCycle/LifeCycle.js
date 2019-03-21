@@ -19,9 +19,6 @@ class LifeCycle extends React.Component {
   componentDidMount() {
     console.log('3.componentDidMount')
   }
-  componentWillUnmount() {
-    console.log('componentWillUnmount')
-  }
   componentWillReceiveProps() {
     console.log('componentWillReceiveProps')
   }
@@ -34,6 +31,9 @@ class LifeCycle extends React.Component {
   }
   componentDidUpdate() {
     console.log('componentDidUpdate')
+  }
+  componentWillUnmount() {
+    console.log('componentWillUnmount')
   }
 
   handleClick = _ => {
