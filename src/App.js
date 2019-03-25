@@ -16,6 +16,10 @@ import PureComponent from './PureComponent'
 import CreateReactClass from './CreateReactClass/CreateReactClass'
 import Context from './Context/Context'
 import Fragment from './Fragment/Fragment'
+import Portal from './Portal/Portal'
+import ErrorBoundary from './ErrorBoundaries/ErrorBoundary'
+import BuggyCounter from './ErrorBoundaries/BuggyCounter'
+import MouseTracker from './RenderProps/MouseTracker'
 
 function formatName(user) {
   return user.firstName + ' ' + user.lastName
@@ -88,6 +92,15 @@ class App extends Component {
         <Context />
 
         <Fragment />
+
+        <div id="modal-root"></div>
+        <Portal></Portal>
+
+        <ErrorBoundary>
+          <BuggyCounter />
+        </ErrorBoundary>
+
+        <MouseTracker />
       </div>
     );
   }
