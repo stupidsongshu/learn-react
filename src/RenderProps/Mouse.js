@@ -1,5 +1,8 @@
 import React from 'react'
 
+function createMarkup() {
+  return { __html: 'dangerouslySetInnerHTML' }
+}
 class Mouse extends React.Component {
   constructor(props) {
     super(props)
@@ -16,6 +19,7 @@ class Mouse extends React.Component {
       <div style={{height: '100%'}} onMouseMove={this.handleMousemove.bind(this)}>
         <p>The current mouse position is ({this.state.x}, {this.state.y})</p>
         {this.props.render(this.state)}
+        <div dangerouslySetInnerHTML={createMarkup()}></div>
       </div>
     )
   }
