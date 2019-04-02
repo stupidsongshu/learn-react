@@ -21,6 +21,8 @@ import ErrorBoundary from './ErrorBoundaries/ErrorBoundary'
 import BuggyCounter from './ErrorBoundaries/BuggyCounter'
 import MouseTracker from './RenderProps/MouseTracker'
 
+import RouterExample from './react-router-dom/index'
+
 function formatName(user) {
   return user.firstName + ' ' + user.lastName
 }
@@ -101,6 +103,8 @@ class App extends Component {
         </ErrorBoundary>
 
         <MouseTracker />
+
+        <RouterExample />
       </div>
     );
   }
