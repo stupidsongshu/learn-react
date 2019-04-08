@@ -1,8 +1,32 @@
 import React from 'react'
-import { BrowserRouter as Router, Route, Link, Redirect, Switch } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Redirect, Switch, NavLink } from 'react-router-dom'
 import { TransitionGroup, CSSTransition } from 'react-transition-group'
 
 import './css/fade.css'
+import testModule from './css/test.module.css'
+
+const navList = [
+  {
+    name: 'Red',
+    path: '/hsl/10/90/50',
+    color: 'hsl(10, 90%, 50%)'
+  },
+  {
+    name: 'Green',
+    path: '/hsl/120/100/40',
+    color: 'hsl(120, 100%, 40%)'
+  },
+  {
+    name: 'Blue',
+    path: '/rgb/33/150/243',
+    color: 'rgb(33, 150, 243)'
+  },
+  {
+    name: 'Pink',
+    path: '/rgb/240/98/146',
+    color: 'rgb(240, 98, 146)'
+  }
+]
 
 function AnimationTransitions() {
   return (
@@ -11,11 +35,21 @@ function AnimationTransitions() {
         <div className="panel" style={{position: 'relative', height: '200px'}}>
           <div style={styles.fill}>
             <Route exact path='/' render={_ => <Redirect to="/hsl/10/90/50" />} />
-            <ul style={styles.nav}>
-              <NavLink to="/hsl/10/90/50">Red</NavLink>
+            <ul style={styles.nav} className={testModule.test}>
+              {/* <NavLink to="/hsl/10/90/50">Red</NavLink>
               <NavLink to="/hsl/120/100/40">Green</NavLink>
               <NavLink to="/rgb/33/150/243">Blue</NavLink>
-              <NavLink to="/rgb/240/98/146">Pink</NavLink>
+              <NavLink to="/rgb/240/98/146">Pink</NavLink> */}
+              {
+                navList.map((item, index) => (
+                  <NavLinkCustom
+                    key={index}
+                    to={item.path}
+                    active-class="hahaha"
+                    activecolor={item.color}
+                  >{item.name}</NavLinkCustom>
+                ))
+              }
             </ul>
 
             <div style={styles.content}>
@@ -35,10 +69,15 @@ function AnimationTransitions() {
   )
 }
 
-function NavLink(props) {
+function NavLinkCustom(props) {
   return (
     <li style={styles.navItem}>
-      <Link {...props} style={{color: 'inherit'}}></Link>
+      <NavLink
+        {...props}
+        style={{color: 'inherit'}}
+        activeClassName={props['active-class']}
+        activeStyle={{color: props.activecolor}}>
+      </NavLink>
     </li>
   )
 }
@@ -91,7 +130,8 @@ styles.navItem = {
   textAlign: "center",
   flex: 1,
   listStyleType: "none",
-  padding: "10px"
+  padding: "10px",
+  color: "#abcdef"
 };
 
 styles.hsl = {

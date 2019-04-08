@@ -4,6 +4,10 @@ import Redirect from './Redirect'
 import CustomeLink from './CustomeLink'
 import Sidebar from './Sidebar'
 import AnimatedTransitions from './AnimatedTransitions'
+import AmbiguousMatches from './AmbiguousMatches'
+import RouteConfig from './RouteConfig'
+import QueryParameters from './QueryParameters'
+import NavLinkDemo from './NavLink'
 
 class RouterExample extends React.Component {
   render() {
@@ -14,6 +18,10 @@ class RouterExample extends React.Component {
         <CustomeLink />
         <Sidebar />
         <AnimatedTransitions />
+        <AmbiguousMatches />
+        <RouteConfig />
+        <QueryParameters />
+        <NavLinkDemo />
       </div>
     )
   }

@@ -8,10 +8,14 @@ function About() {
   return <h2>About</h2>
 }
 
-function User({ match }) {
+function User({ match, location, history }) {
   return (
     <div>
-      {JSON.stringify(match)}
+      <div className="panel">
+        <p>match: {JSON.stringify(match)}</p>
+        <p>location: {JSON.stringify(location)}</p>
+        <p>history: {JSON.stringify(history)}</p>
+      </div>
       <h3>Requested Param: {match.params.id}</h3>
     </div>
   )
@@ -20,7 +24,6 @@ function Users({ match }) {
   return (
     <div>
       <h2>User</h2>
-      {JSON.stringify(match)}
       <ul>
         <li>
           <Link to={`${match.url}/components`}>Components</Link>

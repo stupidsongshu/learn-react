@@ -17,8 +17,8 @@ function AuthExample() {
   return (
     <Router>
       <div className="panel">
-      <h2>Redirect</h2>
-      <AuthButton />
+        <h2>Redirect</h2>
+        <AuthButton />
         <ul>
           <li>
             <Link to="/public">Public Page</Link>
@@ -53,6 +53,8 @@ function PrivateRoute({ component: Component, ...rest }) {
           <Redirect
             to={{
               pathname: '/login',
+              search: '?utm=your+face',
+              hash: '#haha',
               state: { from: props.location }
             }}
           />
@@ -82,7 +84,9 @@ class Login extends React.Component {
   render() {
     const { redirectToReferrer } = this.state
     const { from } = this.props.location.state || { from: { pathname: '/' } }
-    if (redirectToReferrer) return <Redirect to={from}></Redirect>
+    const { search, hash } = this.props.location
+    const merge = Object.assign({}, from, { search, hash })
+    if (redirectToReferrer) return <Redirect to={merge}></Redirect>
 
     return (
       <div>
