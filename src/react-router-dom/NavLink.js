@@ -1,19 +1,12 @@
 import React from 'react'
 import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom'
 
-// const oddEvent = (match, location) => {
-//   console.log('oddevent', match, location)
-//   if (!match) {
-//     return false
-//   }
-//   const eventId = parseInt(match.params.id)
-//   console.log(eventId)
-// }
-
 const oddEvent = (match, location) => {
   if (!match) {
     return false
   }
+  // TODO there is a bug: match.params
+  console.log(match)
   const eventID = parseInt(match.params.eventID)
   console.log(eventID)
   return !isNaN(eventID) && eventID % 2 === 1
