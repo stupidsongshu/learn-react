@@ -23,7 +23,7 @@ import MouseTracker from './RenderProps/MouseTracker'
 
 import RouterExample from './react-router-dom/index'
 
-// import Counter from './Redux/counter'
+import Counter from './Redux-demo1/counter'
 
 function formatName(user) {
   return user.firstName + ' ' + user.lastName
@@ -108,7 +108,7 @@ class App extends Component {
 
         <RouterExample />
 
-        {/* <Counter /> */}
+        <Counter />
       </div>
     );
   }
