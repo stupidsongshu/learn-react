@@ -2,6 +2,7 @@ import React from 'react'
 import StateHook from './state'
 import EffectHook from './effect'
 import { ReducerHook1, ReducerHook2 } from './useReducer'
+import RefHook from './useRef'
 
 export default class Hook extends React.Component {
   render() {
@@ -11,6 +12,7 @@ export default class Hook extends React.Component {
         <EffectHook />
         <ReducerHook1 />
         <ReducerHook2 initialCount={-1} />
+        <RefHook />
       </div>
     )
   }

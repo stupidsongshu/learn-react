@@ -31,7 +31,7 @@ class RefCallback extends React.Component {
 
   componentDidMount() {
     console.log('ref callback el', this.inputEl)
-    this.focusTextInput()
+    // this.focusTextInput()
   }
 
   render() {

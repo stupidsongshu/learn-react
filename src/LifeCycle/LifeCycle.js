@@ -45,7 +45,7 @@ class LifeCycle extends React.Component {
   componentDidMount() {
     console.log('3.componentDidMount')
   }
-  componentWillReceiveProps() {
+  componentWillReceiveProps(nextProps) {
     console.log('componentWillReceiveProps')
   }
   /**
@@ -56,11 +56,11 @@ class LifeCycle extends React.Component {
    * 如果你一定要手动编写此函数，可以将 this.props 与 nextProps 以及 this.state 与nextState 进行比较，并返回 false 以告知 React 可以跳过更新。请注意，返回 false 并不会阻止子组件在 state 更改时重新渲染。
    * 我们不建议在 shouldComponentUpdate() 中进行深层比较或使用 JSON.stringify()。这样非常影响效率，且会损害性能。
    */
-  shouldComponentUpdate() {
+  shouldComponentUpdate(nextProps, nextState) {
     console.log('shouldComponentUpdate')
     return true
   }
-  componentWillUpdate() {
+  componentWillUpdate(nextProps, nextState) {
     console.log('componentWillUpdate')
   }
   /**
