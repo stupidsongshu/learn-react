@@ -1,5 +1,24 @@
 import React, { useState, useEffect } from 'react'
 
+/**
+ * Hook 规则: (eslint-plugin-react-hooks)
+ * 1. 只在最顶层使用 Hook
+ * 不要在循环，条件或嵌套函数中调用 Hook， 确保总是在你的 React 函数的最顶层调用他们。
+ * 遵守这条规则，你就能确保 Hook 在每一次渲染中都按照同样的顺序被调用。
+ * 这让 React 能够在多次的 useState 和 useEffect 调用之间保持 hook 状态的正确。
+ * 2. 只在 React 函数中调用 Hook
+ * 不要在普通的 JavaScript 函数中调用 Hook。
+ * ✅ 在 React 的函数组件中调用 Hook
+ * ✅ 在自定义 Hook 中调用其他 Hook
+ */
+
+/**
+ * 使用 useEffect 完成副作用操作。赋值给 useEffect 的函数会在组件渲染到屏幕之后执行。
+ * 你可以把 effect 看作从 React 的纯函数式世界通往命令式世界的逃生通道。
+ * 默认情况下，effect 将在每轮渲染结束后执行。
+ * 虽然 useEffect 会在浏览器绘制后延迟执行，但会保证在任何新的渲染前执行。React 将在组件更新前刷新上一轮渲染的 effect。
+ */
+
 function EffectHook() {
   const [count, setCount] = useState(0)
   const [time, setTime] = useState(0)

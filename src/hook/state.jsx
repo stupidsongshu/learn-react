@@ -8,6 +8,8 @@ function StateHook() {
       <h2>State Hook</h2>
       <p>You clicked {count} times</p>
       <button onClick={() => setCount(count + 1)}>click me</button>
+      <button onClick={() => setCount(prevCount => prevCount + 1)}>+</button>
+      <button onClick={() => setCount(prevCount => prevCount - 1)}>-</button>
     </div>
   )
 }
